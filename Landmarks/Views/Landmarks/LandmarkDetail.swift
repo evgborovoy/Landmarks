@@ -19,8 +19,11 @@ struct LandmarkDetail: View {
         @Bindable var modelData = modelData
 
         ScrollView {
-            MapView(coordinate: landmark.locationCoordinate).frame(height: 300)
-            CircleImage(image: landmark.image).offset(y: -140).padding(.bottom, -130)
+            MapView(coordinate: landmark.locationCoordinate)
+                .frame(height: 300)
+            CircleImage(image: landmark.image)
+                .offset(y: -140)
+                .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
                 HStack {
@@ -32,7 +35,9 @@ struct LandmarkDetail: View {
                     Text(landmark.park)
                     Spacer()
                     Text(landmark.state)
-                }.font(.subheadline).foregroundStyle(.secondary)
+                }
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
                 
                 Divider()
                 Text("About \(landmark.name)").font(.title2)
